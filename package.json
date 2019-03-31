@@ -1,0 +1,11 @@
+{
+    "name": "Race Timer",
+    "version": "1.0.0",
+    "description": "Manages timing for races in discord",
+    "main": "bot.js",
+    "author": "Rose Peck",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "winston": "^3.2.1"
+    }
+}
