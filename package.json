@@ -1,5 +1,5 @@
 {
-    "name": "Race Timer",
+    "name": "Spyglass",
     "version": "1.0.0",
     "description": "Manages timing for races in discord",
     "main": "bot.js",
