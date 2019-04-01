@@ -9,6 +9,6 @@
     "author": "Rose Peck",
     "dependencies": {
         "discord.js": "^11.4.2",
-        "websocket": "^1.0.28"
+        "ws": "^6.2.1"
     }
 }
