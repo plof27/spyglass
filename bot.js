@@ -25,7 +25,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var cmd = args[0];
 
         args = args.splice(1);
-        logger.info(args);
         switch(cmd) {
             // !ping
             case 'ping':
@@ -33,6 +32,16 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
+            case 'bulge':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'OWO'
+                });
+            case 'headpat':
+                bot.sendMessage({
+                    to: channelID,
+                    message: '>///<\n*purr*'
+                })
             break;
             // Just add any case commands if you want to..
          }
