@@ -32,11 +32,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
+            break;
             case 'bulge':
                 bot.sendMessage({
                     to: channelID,
                     message: 'OWO'
                 });
+            break;
             case 'headpat':
                 bot.sendMessage({
                     to: channelID,
