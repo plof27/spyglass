@@ -8,6 +8,7 @@
     },
     "author": "Rose Peck",
     "dependencies": {
-        "discord.js": "^11.4.2"
+        "discord.js": "^11.4.2",
+        "websocket": "^1.0.28"
     }
 }
