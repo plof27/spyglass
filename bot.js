@@ -1,5 +1,4 @@
 var Discord = require('discord.js');
-var logger = require('winston');
 var config = require('./config.json');
 
 // Initialize Discord Bot
