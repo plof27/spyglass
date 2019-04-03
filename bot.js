@@ -1,7 +1,8 @@
 var Discord = require('discord.js');
-var config = require('./config.json');
+require('dotenv').config();
 
 // Initialize Discord Bot
+const token = process.env.API_TOKEN || "";
 var bot = new Discord.Client();
 
 bot.on('ready', function (evt) {
@@ -13,7 +14,7 @@ bot.on('ready', function (evt) {
 bot.on('message', message => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.content.substring(0, 1) == '!') {
+    if (message.content.substring(0, 1) == '.') {
         var channel = message.channel;
         var args = message.content.substring(1).split(' ');
         var cmd = args[0];
@@ -36,4 +37,4 @@ bot.on('message', message => {
      }
 });
 
-bot.login(config.token);
+bot.login(token);
