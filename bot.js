@@ -23,12 +23,6 @@ bot.on('message', message => {
             case 'ping':
                 channel.send('pong!');
             break;
-            case 'bulge':
-                channel.send('OWO')
-            break;
-            case 'headpat':
-                channel.send('>///<\n*purr*');
-            break;
             case 'sfw':
                 for (var i=0; i<3; i++) channel.send({
                     files: [{
