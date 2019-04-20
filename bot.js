@@ -141,6 +141,13 @@ bot.on('message', message => {
             // quit the current race
             case 'quit':
               if (players.delete(message.author.id)) channel.send(`${message.author} has left the race.`);
+              if (players.get(message.author.id).ready == false) {
+                  number_unready--;
+                  if (number_unready === 0) {
+                      channel.send('All players ready! Starting the race in 10 seconds!');
+                      start_race();
+                  }
+              }
             break;
 
             // ready up! once everyons's ready, start the race!
