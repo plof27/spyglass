@@ -81,7 +81,7 @@ bot.on('message', message => {
             // help command
             case 'help':
               if (args[1] === 'full') {
-                channel.send('`.help`\n\t\tDisplay the help message. Use `.help full` for all commands.\n`.ping`\n\t\tPing the bot for a response.\n`.race name max_time`\n\t\tDeclare a new race with a name of `name` and a time limit of `max_time`.\n`.reset`\n\t\tReset race variables so you can declare a new race, or cancel an existing one.\n`.join`\n\t\tJoin an existing race\n`.quit`\n\t\tQuit the current race.\n`.ready`\n\t\tReady up so we can start!\n`.unready`\n\t\tGo back to being not ready.\n`.done`\n\t\tFinish the race and get your time!\n`.yell`\n\t\tPing all players who are in the race but not yet ready.\n`.forcestart`\n\t\tForce the start of a race even if not everyone is ready.\n`.special`\n\t\tAdmin-only test command.\n`sfw`\n\t\tPost safe for work sasuke.');
+                channel.send('`.help`\n\t\tDisplay the help message. Use `.help full` for all commands.\n`.ping`\n\t\tPing the bot for a response.\n`.race name max_time`\n\t\tDeclare a new race with a name of `name` and a time limit of `max_time`.\n`.reset`\n\t\tReset race variables so you can declare a new race, or cancel an existing one.\n`.join`\n\t\tJoin an existing race\n`.quit`\n\t\tQuit the current race.\n`.ready`\n\t\tReady up so we can start!\n`.unready`\n\t\tGo back to being not ready.\n`.done`\n\t\tFinish the race and get your time!\n`.yell`\n\t\tPing all players who are in the race but not yet ready.\n`.forcestart`\n\t\tForce the start of a race even if not everyone is ready.\n`.special`\n\t\tAdmin-only test command.\n`.sfw`\n\t\tPost safe for work sasuke.');
               } else {
                 channel.send('`.help`\t\t\tDisplay the help message. Use `.help full` for all commands.\n`.ping`\t\t\tPing the bot for a response.\n`.join`\t\t\tJoin an existing race\n`.quit`\t\t\tQuit the current race.\n`.ready`\t\t  Ready up so we can start!\n`.unready`\t  Go back to being not ready.\n`.done`\t\t\tFinish the race and get your time!\n')
               }
@@ -145,7 +145,7 @@ bot.on('message', message => {
 
             // ready up! once everyons's ready, start the race!
             case 'ready':
-              if (players.has(message.author.id)) {
+              if (players.has(message.author.id) && players.get(message.author.id).ready == false) {
                 players.get(message.author.id).ready = true;
                 number_unready--;
                 channel.send(`${message.author} is ready. ${number_unready} remain.`)
