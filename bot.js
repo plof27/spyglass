@@ -145,13 +145,17 @@ bot.on('message', message => {
 
             // ready up! once everyons's ready, start the race!
             case 'ready':
-              if (players.has(message.author.id) && players.get(message.author.id).ready == false) {
-                players.get(message.author.id).ready = true;
-                number_unready--;
-                channel.send(`${message.author} is ready. ${number_unready} remain.`)
-                if (number_unready === 0) {
-                  channel.send('All players ready! Starting the race in 10 seconds!');
-                  start_race();
+              if (players.has(message.author.id)) {
+                if (players.get(message.author.id).ready == false) {
+                    players.get(message.author.id).ready = true;
+                    number_unready--;
+                    channel.send(`${message.author} is ready. ${number_unready} remain.`)
+                    if (number_unready === 0) {
+                        channel.send('All players ready! Starting the race in 10 seconds!');
+                        start_race();
+                    }
+                } else {
+                    channel.send('You are already ready.');
                 }
               } else {
                 channel.send('You are not in a race.');
